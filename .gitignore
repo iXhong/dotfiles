@@ -1,11 +1,11 @@
 /*
 
+!/.config
 !/.gitignore
-!/alacritty
-!/mako
-!/yt-dlp
+!/.env 
+!/.zshrc
+!/.vimrc
+!/.condarc
+!/.gitconfig
+!/.bashrc
 
-!/mpv
-!/swaylock
-!/waybar
-!/wob

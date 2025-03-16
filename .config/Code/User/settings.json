@@ -1,0 +1,17 @@
+{
+    "editor.fontSize": 20,
+    "[typst]": {
+        "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?"
+    },
+    "[typst-code]": {
+        "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?"
+    },
+    "debug.console.fontSize": 18,
+    "screencastMode.fontSize": 64,
+    "scm.inputFontSize": 16,
+    "terminal.integrated.fontSize": 18,
+    "terminal.integrated.commandsToSkipShell": [
+        "language-julia.interrupt"
+    ],
+    "julia.symbolCacheDownload": false
+}

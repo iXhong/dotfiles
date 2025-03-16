@@ -1,0 +1,14 @@
+[user]
+  name = George Liu
+  email = <noreply>
+[init]
+  defaultBranch = main
+
+[alias]
+  st = status
+  co = checkout
+  ci = commit
+  br = branch 
+
+[color]
+	ui = true
