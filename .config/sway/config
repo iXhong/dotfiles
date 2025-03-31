@@ -19,7 +19,8 @@ set $term alacritty
 # Your preferred application launcher
 #set $menu wmenu-run
 #set $menu "rofi -show drun -show-icons"
-set $menu "rofi -combi-modi window,drun -show combi -show-icons"
+set $menu "wofi "
+#set $menu "rofi -combi-modi window,drun -show combi -show-icons"
 #set $menu "--no-startup-id rofi -show drun -run-shell-command '{terminal} -e zsh -ic "{cmd} && read"'"
 
 ### Output configuration
@@ -225,7 +226,7 @@ exec mako
 exec a2ln
 exec nm-applet
 exec blueman-applet
-exec "/usr/lib/polkit-kde-authentication-agent-1"
+exec "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 exec_always "fcitx5 -d"
 #clipboard
 exec "wl-paste --watch cliphist store"
