@@ -1,0 +1,23 @@
+* {
+    border-radius:3px;
+    border: none;
+}
+
+window {
+    font-size: 28px;
+    font-family: "Roboto Mono medium";
+    color: white;
+}
+
+#entry:selected {
+    background-color: #bbccdd;
+}
+
+#text:selected {
+    color: black;
+}
+
+image{
+    margin-left: .25em;
+    margin-right: .25em;
+}
