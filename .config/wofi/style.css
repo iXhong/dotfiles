@@ -1,23 +1,126 @@
-* {
+*{
     border-radius:3px;
     border: none;
 }
 
+/* 基础窗口样式 */
 window {
-    font-size: 28px;
-    font-family: "Roboto Mono medium";
-    color: white;
+    background-color: #1A1A1A; /* 主背景色 */
+    color: #E0E0E0; /* 主文字色 */
+    padding: 12px; /* 内边距 */
 }
 
-#entry:selected {
-    background-color: #bbccdd;
+/* 外层容器 */
+#outer-box {
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
 }
 
-#text:selected {
-    color: black;
+/* 输入框 */
+#input {
+    background-color: #2D2D2D; /* 输入背景 */
+    color: #FFFFFF; /* 输入文字 */
+    border: 2px solid #404040; /* 常规边框 */
+    border-radius: 6px;
+    padding: 10px 15px;
+    margin-bottom: 12px;
+    font-size: 22px;
+    transition: all 0.2s ease;
 }
 
-image{
-    margin-left: .25em;
-    margin-right: .25em;
+#input:focus {
+    border-color: #4DABF7; /* 聚焦状态 */
+    box-shadow: inset 0 0 0 1px rgba(77, 171, 247, 0.2);
+}
+
+/* 滚动区域 */
+#scroll {
+    background-color: #1F1F1F; /* 滚动区背景 */
+    border-radius: 6px;
+    margin: 4px 0;
+}
+
+/* 内层容器 */
+#inner-box {
+    padding: 8px;
+    spacing: 4px; /* 条目间距 */
+}
+
+/* 条目样式 */
+#entry {
+    background-color: #242424; /* 默认背景 */
+    color: #D0D0D0;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: 10px 15px;
+    transition: background-color 0.15s ease;
+}
+
+#entry:selected { /* 选中状态 */
+    background-color: #2E3A4A; /* 深蓝灰色背景 */
+    border-color: #4DABF7;
+    color: #FFFFFF;
+}
+
+#entry:hover { /* 悬停状态 */
+    background-color: #2D2D2D;
+}
+
+/* 图片样式 */
+#img {
+    margin-right: 12px;
+    min-width: 24px;
+    min-height: 24px;
+}
+
+/* 文字样式 */
+#text {
+    font-family: "Segoe UI", system-ui, sans-serif;
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* 滚动条样式 */
+scrollbar {
+    width: 8px;
+    border: none;
+}
+
+scrollbar trough {
+    background-color: rgba(45, 45, 45, 0.8);
+    border-radius: 4px;
+}
+
+scrollbar slider {
+    background-color: #4D4D4D;
+    min-height: 40px;
+    border-radius: 4px;
+    border: 1px solid #333333;
+}
+
+scrollbar slider:hover {
+    background-color: #5D5D5D;
+}
+
+/* 占位符文字 */
+#input::placeholder {
+    color: #6B6B6B;
+    opacity: 1;
+}
+
+@media (min-resolution: 120dpi) {
+    #text {
+        font-size: 15px;
+    }
+    #img {
+        min-width: 28px;
+        min-height: 28px;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    #entry:selected {
+        background-color: #354152; /* 更柔和的选中色 */
+    }
 }
