@@ -224,7 +224,7 @@ seat seat0 xcursor_theme Adwaita 40
 ###notification
 exec mako
 exec a2ln
-exec nm-applet
+exec nm-applet --indicator
 exec blueman-applet
 exec "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 exec_always "fcitx5 -d"
@@ -253,6 +253,7 @@ client.focused #8fd4ff #8fd4ff #8fd4ff #8fd4ff #8fd4ff
 ### Window
 #set floating for certain app
 for_window [app_id="telegram"] floating enable
+for_window [title="Image Viewer"] floating enable
 for_window [app_id="(?i)(?:blueman-manager|azote|gnome-disks|nwg-shell-config)"] floating enable
 for_window [app_id="(?i)(?:pavucontrol|nm-connection-editor|gsimplecal|galculator)"] floating enable
 for_window [title="LocalSend*"] floating enable
