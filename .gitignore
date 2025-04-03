@@ -2,7 +2,6 @@
 
 !/.config
 !/.gitignore
-!/.env 
 !/.zshrc
 !/.vimrc
 !/.condarc
