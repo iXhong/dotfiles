@@ -116,3 +116,11 @@ function y() {
 	fi
 	rm -f -- "$tmp"
 }
+
+tl() {
+  local query=""
+  if [ $# -gt 0 ]; then
+    query="-q $*"
+  fi
+  tldr --list | fzf $query --preview 'tldr {} --color always' | xargs tldr
+}
