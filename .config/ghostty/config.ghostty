@@ -1,0 +1,23 @@
+# Theme 
+
+theme = Catppuccin Macchiato
+#theme = Apple System Colors Light
+
+# Typography
+font-family = "JetBrainsMono Font"
+font-size = 20
+font-thicken = true
+
+
+# Window Customization
+window-padding-x = 10
+window-padding-y = 10
+background-opacity = 1
+background-blur = 20
+window-height = 30
+window-width = 118
+
+# Behavior
+cursor-style = block
+shell-integration = zsh
+shell-integration-features = ssh-terminfo,ssh-env
