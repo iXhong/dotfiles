@@ -31,7 +31,7 @@ output * bg ~/Pictures/wallpaper/lake.jpg fill
   input type:touchpad {
       dwt enabled
       tap enabled
-      natural_scroll disable
+      natural_scroll enable
       middle_emulation enabled
   }
 
