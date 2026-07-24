@@ -35,6 +35,8 @@ output * bg ~/Pictures/wallpaper/lake.jpg fill
       middle_emulation enabled
   }
 
+  input * xkb_options caps:swapescape
+
 ### Key bindings
 #
 # Basics:
