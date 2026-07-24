@@ -10,7 +10,7 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $term alacritty
+set $term ghostty
 set $menu "wofi "
 set $WOBSOCK $XDG_RUNTIME_DIR/wob.sock
 
