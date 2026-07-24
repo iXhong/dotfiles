@@ -213,7 +213,7 @@ font pango:SourceCodePro Regular 8
 client.focused #8fd4ff #8fd4ff #8fd4ff #8fd4ff #8fd4ff
 
 ###Output
-#output eDP-1 scale 1.2
+output eDP-1 scale 1.2
 
 ### Window
 #set floating for certain app
