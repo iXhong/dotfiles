@@ -180,7 +180,7 @@ bindsym $win+l exec swaylock -f -c 000000
 seat seat0 xcursor_theme Adwaita 40
 
 ###notification
-exec mako
+exec swaync
 exec a2ln
 ### system tray
 exec nm-applet --indicator
@@ -190,7 +190,7 @@ exec "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 exec_always "fcitx5 -d"
 ###clipboard
 exec "wl-paste --watch cliphist store"
-bindsym $mod+c exec "cliphist list | rofi -dmenu | cliphist decode | wl-copy"
+bindsym $mod+c exec "cliphist list | wofi --dmenu | cliphist decode | wl-copy"
 
 ##Screenshot
 set $screenshot /usr/share/sway-contrib/grimshot
