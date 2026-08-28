@@ -72,11 +72,11 @@
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "interval": 3,//second
-        "format-wifi": "NET ↓{bandwidthDownBytes:>} ↑{bandwidthUpBytes:>}",
-        "format-ethernet": "NET {ipaddr}/{cidr}",
+        "format-wifi": "↓{bandwidthDownBytes:>} ↑{bandwidthUpBytes:>}",
+        "format-ethernet": "{ipaddr}/{cidr}",
         "tooltip-format": "{ifname} via {gwaddr}",
-        "format-linked": "NET {ifname}",
-        "format-disconnected": "NET off",
+        "format-linked": "{ifname}",
+        "format-disconnected": "off",
         "tooltip-format": "{essid} {ifname}\n{ipaddr}/{cidr}\ngateway\t{gwaddr}"
         //"format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
