@@ -169,8 +169,8 @@ bindsym $mod+r mode "resize"
     # Special keys to adjust brightness via brightnessctl
     bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%- | sed -En 's/.*\(([0-9]+)%\).*/\1/p' > $WOBSOCK
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+ | sed -En 's/.*\(([0-9]+)%\).*/\1/p' > $WOBSOCK
-    # Special key to take a screenshot with grim
-    bindsym Print exec grim
+    # Screenshot the whole screen to the clipboard (grim | wl-clipboard)
+    bindsym Print exec grim - | wl-copy && notify-send -a Screenshot -i camera-photo-symbolic "Full screen" "Copied to clipboard"
 
 # Self Define
 ###lock the screen
@@ -193,11 +193,12 @@ exec "wl-paste --watch cliphist store"
 bindsym $mod+c exec "cliphist list | wofi --dmenu | cliphist decode | wl-copy"
 
 ##Screenshot
-set $screenshot /usr/share/sway-contrib/grimshot
-bindsym {
-	#Capture the currently active output
-	$mod+p exec $screenshot --notify save output
-}
+# Select a region with slurp and copy it to the clipboard
+bindsym $mod+Shift+s exec grim -g "$(slurp)" - | wl-copy && notify-send -a Screenshot -i camera-photo-symbolic "Selection" "Copied to clipboard"
+# Full screen to clipboard
+bindsym $mod+p exec grim - | wl-copy && notify-send -a Screenshot -i camera-photo-symbolic "Full screen" "Copied to clipboard"
+# Select a region and save it as a timestamped PNG in ~/Pictures/Screenshots
+bindsym $mod+Shift+p exec sh -c 'mkdir -p ~/Pictures/Screenshots && grim -g "$(slurp)" ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png && notify-send -a Screenshot -i camera-photo-symbolic "Selection" "Saved to ~/Pictures/Screenshots"'
 #flameshot set
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
 exec hash dbus-update-activation-environment 2>/dev/null && \
