@@ -9,4 +9,11 @@
 !/.bashrc
 !/README.md
 
+# Secrets / credentials — never track these.
+# NOTE: `!/.config` above un-ignores the whole .config tree, so secret
+# subdirectories must be re-ignored explicitly (last matching rule wins).
+/.config/a2ln/
+/.bashrc.local
+/.zshrc.local
+
 

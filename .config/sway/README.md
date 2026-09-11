@@ -27,7 +27,6 @@ Sway itself is only the compositor/window manager. The desktop is *composed* fro
 
 ### Autostarted daemons (from `config`)
 - **swaync** — notifications (`exec swaync`)
-- **a2ln** — audio 2-line notification helper
 - **nm-applet** — network manager tray icon
 - **blueman-applet** — bluetooth tray icon
 - **polkit-gnome** — privilege authorization agent
@@ -52,7 +51,8 @@ Manual equivalents of the bound shortcuts:
 
 ```sh
 # Region -> clipboard        (≈ $mod+Shift+s)
-grim -g "$(slurp)" - | wl-copy
+slurp > /tmp/.swayshot.geom \
+  && grim -g "$(cat /tmp/.swayshot.geom)" - | wl-copy
 
 # Full screen -> clipboard   (≈ Print / $mod+p)
 grim - | wl-copy
@@ -61,6 +61,12 @@ grim - | wl-copy
 mkdir -p ~/Pictures/Screenshots
 grim -g "$(slurp)" ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png
 ```
+
+> **Cancelling a region selection** (pressing `Esc` while `slurp` is active) must be a no-op:
+> no clipboard change and no notification. The region→clipboard bind writes the geometry to a
+> file first and only proceeds when `slurp` exits successfully — a plain `grim ... | wl-copy`
+> would hide `grim`'s failure, since `wl-copy` exits `0` even on empty input, wiping the
+> clipboard and reporting a false success.
 
 ### Clipboard history
 | Tool | Purpose |

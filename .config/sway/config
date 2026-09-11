@@ -181,7 +181,6 @@ seat seat0 xcursor_theme Adwaita 40
 
 ###notification
 exec swaync
-exec a2ln
 ### system tray
 exec nm-applet --indicator
 exec blueman-applet
@@ -194,7 +193,9 @@ bindsym $mod+c exec "cliphist list | wofi --dmenu | cliphist decode | wl-copy"
 
 ##Screenshot
 # Select a region with slurp and copy it to the clipboard
-bindsym $mod+Shift+s exec grim -g "$(slurp)" - | wl-copy && notify-send -a Screenshot -i camera-photo-symbolic "Selection" "Copied to clipboard"
+# `slurp > file && ...` aborts cleanly when the selection is cancelled (Esc):
+# grim never runs, the clipboard is left untouched, and no notification is sent.
+bindsym $mod+Shift+s exec sh -c 'slurp > /tmp/.swayshot.geom && grim -g "$(cat /tmp/.swayshot.geom)" - | wl-copy && notify-send -a Screenshot -i camera-photo-symbolic "Selection" "Copied to clipboard"'
 # Full screen to clipboard
 bindsym $mod+p exec grim - | wl-copy && notify-send -a Screenshot -i camera-photo-symbolic "Full screen" "Copied to clipboard"
 # Select a region and save it as a timestamped PNG in ~/Pictures/Screenshots
